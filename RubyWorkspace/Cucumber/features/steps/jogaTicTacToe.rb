@@ -1,4 +1,4 @@
-Selenium::WebDriver::Chrome.driver_path = 'C:/chromedriver.exe'
+Selenium::WebDriver::Chrome.driver_path = '/home/nicksmy/ChromeDriver/chromedriver'
 
 debug = Selenium::WebDriver::Wait.new(:timeout => 60)
 wait = Selenium::WebDriver::Wait.new(:timeout => 2)

@@ -1,4 +1,4 @@
-Selenium::WebDriver::Chrome.driver_path = 'C:/chromedriver.exe'
+Selenium::WebDriver::Chrome.driver_path = '/home/nicksmy/ChromeDriver/chromedriver'
 
 Dado('o site do Facebook') do
     @driver = Selenium::WebDriver.for :chrome
