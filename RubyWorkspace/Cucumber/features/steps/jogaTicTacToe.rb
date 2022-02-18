@@ -1,10 +1,12 @@
+chromeOptions = Selenium::WebDriver::Chrome::Options.new
+chromeOptions.add_argument('--headless')
+chromeOptions.add_argument('--no-sandbox')
+chromeOptions.add_argument('--disable-dev-shm-usage')
+
 Selenium::WebDriver::Chrome.driver_path = '/home/nicksmy/ChromeDriver/chromedriver'
 
-debug = Selenium::WebDriver::Wait.new(:timeout => 60)
-wait = Selenium::WebDriver::Wait.new(:timeout => 2)
-
 Dado('o site do Google') do
-    @driver = Selenium::WebDriver.for :chrome
+    @driver = Selenium::WebDriver.for :chrome, options: chromeOptions
     @driver.get 'https://www.google.com'
 end
 
