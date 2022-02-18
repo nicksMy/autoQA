@@ -11,7 +11,7 @@ Quando('apresentar o campo Criar Nova conta') do
     @driver.find_element(:xpath, "/html/body/div[1]/div[2]/div[1]/div/div/div/div[2]/div/div[1]/form/div[5]/a").click
 end         
 
-Quando('Preencher os campos e acionar o comando Criar') do
+Quando('Preencher os campos') do
     # preenchendo o formulario da nova conta
     # nome
     sleep 2                                                              
@@ -60,10 +60,15 @@ Quando('Preencher os campos e acionar o comando Criar') do
     sleep 1
     @driver.find_element(:xpath, "/html/body/div[3]/div[2]/div/div/div[2]/div/div/div[1]/form/div[1]/div[7]/span/span[2]/label").click
 
+end
+
+Quando('Acionar o comando Criar') do
     # click no botão de criação de conta
     sleep 1
     @driver.find_element(:xpath, "/html/body/div[3]/div[2]/div/div/div[2]/div/div/div[1]/form/div[1]/div[10]/button").click
+end
 
+Então('Sair do navegador') do
     sleep 10
     @driver.quit
 end

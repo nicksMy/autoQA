@@ -6,5 +6,6 @@ Funcionalidade: Criar uma conta no Facebook
 Cenário: Criando conta no Facebook
     Dado o site do Facebook
     Quando apresentar o campo Criar Nova conta
-    E Preencher os campos e acionar o comando Criar
-    Então o Facebook irá exibir a tela inicial
+    E Preencher os campos 
+    E acionar o comando Criar
+    Então sair do navegador
