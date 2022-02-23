@@ -3,6 +3,7 @@ Funcionalidade: Efetuar pesquisa no Youtube
     Eu quero dar like em um vídeo
     A fim de ajudar o canal
 
+@pesquisa
 Cenário: Pesquisando vídeo no Youtube
     Dado o site Youtube
     Quando apresentar o campo de busca
