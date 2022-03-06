@@ -1,12 +1,10 @@
-chromeOptions = Selenium::WebDriver::Chrome::Options.new
-chromeOptions.add_argument('--headless')
-chromeOptions.add_argument('--no-sandbox')
-chromeOptions.add_argument('--disable-dev-shm-usage')
-
 Selenium::WebDriver::Chrome.driver_path = '/home/nicksmy/ChromeDriver/chromedriver'
 
+debug = Selenium::WebDriver::Wait.new(:timeout => 60)
+wait = Selenium::WebDriver::Wait.new(:timeout => 2)
+
 Dado('o site do Google') do
-    @driver = Selenium::WebDriver.for :chrome, options: chromeOptions
+    @driver = Selenium::WebDriver.for :chrome
     @driver.get 'https://www.google.com'
 end
 
@@ -16,18 +14,34 @@ Quando('exibir o campo de pesquisa') do
     @driver.find_element(:name, "q").displayed?
 end
 
-Quando('preencher o campo') do
+Quando('preencher o campo e entrar no site') do
     # escrever a pesquisa no campo
     sleep 2
     @driver.find_element(:name, "q").click
-    @driver.find_element(:name, "q").send_keys "tic tac toe\n"
+    @driver.find_element(:name, "q").send_keys "playtictactoe\n"
+
+    sleep 1
+    @driver.find_element(:partial_link_text, "Tic-Tac-Toe").click
 end
 
-Quando('mostrar o resultado e ganhar do robozinho') do
+Quando('mostrar o resultado ganhar do robozinho') do
 	sleep(5.minutes)
-    # começar a jogar contra o google
-    #jsname="WfZakb"
-    @driver.find_element(:xpath, "/html/body/div[7]/div/div[10]/div[1]/div[2]/div[2]/div/div/div[1]/block-component/div/div[1]/div/div/div/div[1]/div/div/div/div/div[2]/table/tbody/tr[1]/td[1]").click
+    # começar o jogo
+    
+    if @driver.find_element(:class, "square top left").displayed?
+        puts "está localizando"
+    end
+
+    #squareTopLeft = @driver.find_element(:class, "square top left")
+
+    #x_offset = squareTopLeft.rect.x
+    #y_offset = squareTopLeft.rect.y
+
+    #@driver.action.move_to_location(x_offset, y_offset).perform
+    #@driver.action.context_click(squareTopLeft).perform
+
+    #squareTopLeft = @driver.find_element(:class, "square top left")
+    #@driver.action.move_to(squareTopLeft).perform
 end
 
 Então('sair do navegador') do

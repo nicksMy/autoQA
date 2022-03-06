@@ -14,7 +14,7 @@ end
 Quando('Preencher os campos') do
     # preenchendo o formulario da nova conta
     # nome
-    sleep 2                                                              
+    sleep 1                                                              
     @driver.find_element(:xpath, "/html/body/div[3]/div[2]/div/div/div[2]/div/div/div[1]/form/div[1]/div[1]/div[1]/div[1]/div/input").click
     @driver.find_element(:xpath, "/html/body/div[3]/div[2]/div/div/div[2]/div/div/div[1]/form/div[1]/div[1]/div[1]/div[1]/div/input").send_keys "Rafael"
 
