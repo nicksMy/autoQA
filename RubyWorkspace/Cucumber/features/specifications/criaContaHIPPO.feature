@@ -1,17 +1,18 @@
+#language: pt
 Funcionalidade: Acessar os descontos da conta Hippo
     Eu quero entrar/registrar uma conta
     A fim de visualizar os descontos
 
 @hippoConta01
 Cenário: Criando conta no Hippo
-    Dado o site do Hippo
-    Quando apresentar o botão Criar uma conta clique
+    Dado o site Hippo
+    Quando apresentar o botão Criar uma conta, clique
     E assim que exibir o alert para o CEP seguir com o preenchimento
     E quando mudar de tela completar todos os campos pessoa física
     E acionar o comando de cadastro de conta
-    E quando mostrar o popup com a validação clicar
-    E voltar para a home page do Hippo
-    E entrar na tela Você bem + e visualizar as três opções de ofertas/descontos
+    E quando mostrar o popup com a validação, clique
+    E voltar para a homepage do Hippo
+    E entrar na tela "Você bem +" e visualizar as três opções de ofertas e descontos
     Então fechar o Browser
 
 @hippoConta02
